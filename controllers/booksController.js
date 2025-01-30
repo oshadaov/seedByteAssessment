@@ -1,9 +1,26 @@
 // controllers/booksController.js
 import books from "../models/bookModel.js";
 
+
 export const getBooks = (req, res) => {
-    res.json(books);
+    let { page, limit } = req.query;
+
+    // Convert to integers with default values
+    page = parseInt(page) || 1;
+    limit = parseInt(limit) || 5;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const paginatedBooks = books.slice(startIndex, endIndex);
+
+    res.json({
+        totalBooks: books.length,
+        totalPages: Math.ceil(books.length / limit),
+        currentPage: page,
+        books: paginatedBooks
+    });
 };
+
 
 export const getBookById = (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
