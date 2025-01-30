@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-   "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -15,6 +15,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-validator": "^7.2.1",
+    "seedbyteapidesign": "file:",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
@@ -25,5 +26,4 @@
     "supertest": "^7.0.0"
   },
   "type": "module"
-  
 }
