@@ -28,7 +28,10 @@ describe("Books API", () => {
         const response = await request(app).post("/books").send(invalidBook);
 
         expect(response.status).toBe(400);
-        expect(response.body).toHaveProperty("error", "Invalid input");
+        expect(response.body).toHaveProperty("errors");
+        expect(Array.isArray(response.body.errors)).toBe(true);
+        expect(response.body.errors[0]).toHaveProperty("msg", "Name is required");
+        expect(response.body.errors[1]).toHaveProperty("msg", "Valid year required");
+
     });
 });
-export {};

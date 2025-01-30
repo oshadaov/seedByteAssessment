@@ -14,7 +14,7 @@ const options = {
             version: "1.0.0",
             description: "A simple Books API using Node.js and Express",
         },
-        servers: [{ url: "http://localhost:3000" }],
+        servers: [{ url: "http://localhost:4000" }],
     },
     apis: [__dirname + "/../routes/*.js"], 
 };
