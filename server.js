@@ -22,3 +22,7 @@ setupSwagger(app);
 app.use("/books", booksRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}\nAPI Docs: http://localhost:${PORT}/api-docs`));
+
+
+
+export default app;
